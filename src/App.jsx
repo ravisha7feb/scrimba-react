@@ -1,17 +1,12 @@
-
-import Header from './components/Header';
-import Socials from './components/Socials';
-import Info from './components/Info';
-import Footer from './components/Footer';
 import "../style.css";
+import BusinessCard from "./components/Business_card/Business_Card";
+import TravelJournal from "./components/Travel_Journal/Travel_Journal";
 
 function App(){
     return (
-        <div className="card">
-            <Header />
-            <Socials />
-            <Info />
-            <Footer />
+        <div className="app">
+            {/* <BusinessCard /> */}
+            <TravelJournal />
         </div>
     )
 }
