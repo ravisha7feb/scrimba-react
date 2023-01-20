@@ -1,0 +1,75 @@
+.travel-journal{
+    display: flex;
+    flex-direction: column;
+    margin-left: 300px;
+}
+
+.travel-card {
+    display: flex;
+    width: 471px;
+    height: 168px;
+    margin: 20px;
+}
+
+.travel-info {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-right: 5px;
+    margin-left: 15px;
+}
+
+.travel-image>img {
+    width: 126px;
+    height: 168px;
+    border-radius: 5px;
+}
+
+.travel-info-1 {
+    display: flex;
+    align-items: center;
+}
+
+.country {
+    font-size: 10.24px;
+    line-height: 12px;
+    letter-spacing: 0.17em;
+    color: #2B283A;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+}
+
+.country>i {
+    font-size: small;
+    color: #F55A5A;
+    text-decoration-line: none;
+}
+
+.map-link>a {
+    font-size: 12px;
+    margin-left: 5px;
+    text-decoration: underline;
+    color: #918E9B;
+}
+
+.travel-place {
+
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+
+    color: #2B283A;
+}
+
+.travel-info-3{
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.travel-description {
+    font-weight: 400;
+    font-size: 13.3px;
+    line-height: 150%;
+    color: #2B283A;
+}

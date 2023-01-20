@@ -4,27 +4,27 @@ import React from 'react';
 function TravelCard(props) {
     return (
         <div className="travel-card">
-            <div className="travel-image">"Img"</div>
+            <div className="travel-image"><img src={props.item.imageUrl} /></div>
             <div className="travel-info">
                 <div className="travel-info-1">
                     <div className="country">
-                        Map_Logo "Location"
+                        <i class="material-icons">place</i> {props.item.location}
                     </div>
                     <div className="map-link">
-                        <a href="map_link">View on Google Maps</a>
+                        <a href={props.item.googleMapsUrl}>View on Google Maps</a>
                     </div>
                 </div>
 
                 <div className="travel-info-2">
-                    <h1>"Name of place"</h1>
+                    <div className="travel-place">{props.item.title}</div>
                 </div>
 
                 <div className="travel-info-3">
-                    "From_Date" - "To_Date"
+                    {props.item.startDate} - {props.item.endDate}
                 </div>
 
                 <div className="travel-info-4">
-                    <p>"Description"</p>
+                    <div className="travel-description"> {props.item.description} </div>
                 </div>
 
 

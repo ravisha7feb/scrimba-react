@@ -1,10 +1,22 @@
 import "./travel_journal.css";
 import Card from "./Card"
+import travelData from "./TravelData"
 
 function TravelJournal(){
+
+    const travel_cards = travelData.map( item =>
+        {
+            return (
+                <Card
+                    item = {item}
+                />
+            )
+            
+        } )
+
     return (
         <div className="travel-journal">
-            <Card />
+            {travel_cards}
         </div>
     )
 }
