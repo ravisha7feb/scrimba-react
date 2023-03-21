@@ -10,6 +10,7 @@ export default function Tenzies() {
     const [dice, setDice] = React.useState(allNewDice())
     const [tenzies, setTenzies] = React.useState(false)
     const [rolls, setRolls] = React.useState(0)
+    const [time, setTime] = React.useState( new Date() )
     
     React.useEffect(() => {
         const allHeld = dice.every(die => die.isHeld)
@@ -19,6 +20,14 @@ export default function Tenzies() {
             setTenzies(true)
         }
     }, [dice])
+
+    React.useEffect(() => {
+        console.log("game won, time taken in seconds: ")
+        const currentTime = new Date()
+        const timeTaken = (currentTime.getTime() - time.getTime()) / 1000;
+        console.log(timeTaken)
+        setTime(new Date())
+    }, [tenzies])
 
     function generateNewDie() {
         return {
