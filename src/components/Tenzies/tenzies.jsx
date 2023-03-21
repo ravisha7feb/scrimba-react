@@ -1,5 +1,6 @@
 import React from "react"
 import Die from "./Die"
+import DottedDie from './dotted_die'
 import {nanoid} from "nanoid"
 import Confetti from "react-confetti"
 import "./tenzies.css"
@@ -8,6 +9,7 @@ export default function Tenzies() {
 
     const [dice, setDice] = React.useState(allNewDice())
     const [tenzies, setTenzies] = React.useState(false)
+    const [rolls, setRolls] = React.useState(0)
     
     React.useEffect(() => {
         const allHeld = dice.every(die => die.isHeld)
@@ -41,9 +43,12 @@ export default function Tenzies() {
                     die :
                     generateNewDie()
             }))
+            setRolls(prevRolls => prevRolls + 1)
+            console.log(rolls)
         } else {
             setTenzies(false)
             setDice(allNewDice())
+            setRolls(0)
         }
     }
     
@@ -67,6 +72,7 @@ export default function Tenzies() {
     return (
         <main>
             {tenzies && <Confetti />}
+            <DottedDie />
             <h1 className="title">Tenzies</h1>
             <p className="instructions">Roll until all dice are the same. 
             Click each die to freeze it at its current value between rolls.</p>
