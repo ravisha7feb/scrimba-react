@@ -4,6 +4,8 @@ import DottedDie from './dotted_die'
 import {nanoid} from "nanoid"
 import Confetti from "react-confetti"
 import "./tenzies.css"
+//import PriorityQueue from "js-priority-queue"
+import PQ from "./pq"
 
 export default function Tenzies() {
 
@@ -11,6 +13,8 @@ export default function Tenzies() {
     const [tenzies, setTenzies] = React.useState(false)
     const [rolls, setRolls] = React.useState(0)
     const [time, setTime] = React.useState( new Date() )
+    //const [bestTime, setBestTime] = React.useState(new PriorityQueue()) //gives type erro
+    const [bestTime, setBestTime] = React.useState(Infinity)
     
     React.useEffect(() => {
         const allHeld = dice.every(die => die.isHeld)
@@ -26,7 +30,11 @@ export default function Tenzies() {
         const currentTime = new Date()
         const timeTaken = (currentTime.getTime() - time.getTime()) / 1000;
         console.log(timeTaken)
+        if(timeTaken < bestTime)
+            setBestTime(timeTaken)
+        console.log(bestTime)
         setTime(new Date())
+        //console.log(bestTime.front())
     }, [tenzies])
 
     function generateNewDie() {
